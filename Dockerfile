@@ -15,11 +15,12 @@ RUN apt-get update && \
 # fornax-orderer
 LABEL maintainer="davimesquita@gmail.com"
 ENV ETCD_ENDPOINT http://etcd:2379
+ENV FABRIC_CA_USER=admin
+ENV FABRIC_CA_PW=adminpw
 COPY et.sh /bin/et
 COPY etset.sh /bin/etset
 COPY etdel.sh /bin/etdel
 COPY etfile.sh /bin/etfile
 COPY etoutput.sh /bin/etoutput
 COPY fornax-ca.sh /bin/fornax-ca
-WORKDIR $FABRIC_CA_ROOT
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/fornax-ca"]
