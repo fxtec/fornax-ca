@@ -3,9 +3,9 @@ FROM hyperledger/fabric-ca:1.2.0
 EXPOSE 7054
 ENV FABRIC_CA_HOME /etc/hyperledger/fabric-ca-server
 ENV FABRIC_CA_SERVER_CA_NAME fornax-ca
-ENV FABRIC_CA_SERVER_CA_CERTFILE /etc/hyperledger/fabric/crypto-config/ordererOrganizations/blockchain.com/ca/ca.blockchain.com-cert.pem
-# FIXME testar se precisa mesmo do PEER0 ou poderá ficar assim mesmo:: /etc/hyperledger/fabric/crypto-config/peerOrganizations/org1.blockchain.com/ca/ca.org1.blockchain.com-cert.pem
-ENV FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric/crypto-config/ordererOrganizations/blockchain.com/ca/
+#ENV FABRIC_CA_SERVER_CA_CERTFILE /etc/hyperledger/fabric/crypto-config/ordererOrganizations/blockchain.com/ca/ca.blockchain.com-cert.pem
+ENV FABRIC_CA_SERVER_CA_CERTFILE /etc/hyperledger/fabric/crypto-config/peerOrganizations/org1.blockchain.com/ca/ca.org1.blockchain.com-cert.pem
+ENV FABRIC_CA_SERVER_CA_KEYFILE /etc/hyperledger/fabric/crypto-config/peerOrganizations/org1.blockchain.com/ca/
 
 #pre-req etcd's.sh
 RUN apt-get update && \
