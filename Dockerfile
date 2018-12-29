@@ -1,10 +1,10 @@
 #https://github.com/yeasy/docker-hyperledger-fabric-ca/blob/master/v1.2.0/Dockerfile
 FROM hyperledger/fabric-ca:1.2.0
 EXPOSE 7054
-ENV FABRIC_CA_HOME /etc/hyperledger/fabric-ca-server
-ENV FABRIC_CA_SERVER_CA_NAME fornax-ca
-ENV FABRIC_CA_SERVER_CA_CERTFILE /etc/hyperledger/fabric/crypto-config/peerOrganizations/org1.blockchain.com/ca/ca.org1.blockchain.com-cert.pem
-ENV FABRIC_CA_SERVER_CA_KEYFILE /etc/hyperledger/fabric/crypto-config/peerOrganizations/org1.blockchain.com/ca/
+ENV FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+ENV FABRIC_CA_SERVER_CA_NAME=ca.blockchain.com
+ENV FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.blockchain.com-cert.pem
+ENV FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/
 
 #pre-req etcd's.sh
 RUN apt-get update && \
